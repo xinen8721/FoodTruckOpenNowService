@@ -9,6 +9,7 @@ public class FoodTruckInfoOperation implements IFoodTruckInfoOperation {
     public FoodTruckInfoOperation() {
         foodTruckMapByDayAndHour = new HashMap();
     }
+
     @Override
     public List<FoodTruckInfo> getFoodTruckByCurrentDate() {
         Date date = new java.util.Date();
@@ -18,11 +19,6 @@ public class FoodTruckInfoOperation implements IFoodTruckInfoOperation {
         int hourOfDay = c.get(Calendar.HOUR_OF_DAY);
 
         return foodTruckMapByDayAndHour.get(DayOfWeek.of(dayOfWeek)).get(hourOfDay);
-    }
-
-    @Override
-    public List<FoodTruckInfo> getFoodTruckByAnyDate() {
-        return null;
     }
 
     @Override
